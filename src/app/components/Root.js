@@ -1,6 +1,10 @@
 import React from "react";
 import {Header} from "./Header";
 
+import {Link, Route, Switch} from "react-router-dom";
+import {Home} from "./Home";
+import {User} from "./User";
+
 export class Root extends React.Component {
     render() {
         return (
@@ -12,7 +16,12 @@ export class Root extends React.Component {
                 </div>
                 <div className="row">
                     <div className="col-md-10 col-md-offset-1">
-                        {this.props.children}
+
+                        <Switch>
+                            <Route exact path="/" component={Home} />æ
+                            <Route path="/user" component={User}/>
+                        </Switch>
+
                     </div>
                 </div>
             </div>
